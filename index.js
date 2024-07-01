@@ -11,7 +11,7 @@ const getCityCoordinates = () => {
     const cityName = cityInput.value.trim();
     if (cityName === "") return;
 
-    const API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
+    const API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
 
     fetch(API_URL)
         .then(response => response.json())
@@ -53,7 +53,7 @@ const displayWeatherDetails = (data) => {
         <h2>Current Weather in ${city.name}, ${city.country}</h2>
         <p>Temperature: ${currentWeather.main.temp} °C</p>
         <p>Weather: ${currentWeather.weather[0].description}</p>
-        <img src="http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png" alt="Weather icon">
+        <img src="https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png" alt="Weather icon">
         <p>Wind: ${currentWeather.wind.speed} m/s</p>
         <p>Humidity: ${currentWeather.main.humidity} %</p>
     `;
@@ -72,7 +72,7 @@ const displayWeatherDetails = (data) => {
                 <h3>${formattedDate}</h3>
                 <p>Temp: ${day.main.temp} °C</p>
                 <p>Weather: ${day.weather[0].description}</p>
-                <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="Weather icon">
+                <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="Weather icon">
                 <p>Wind: ${day.wind.speed} m/s</p>
                 <p>Humidity: ${day.main.humidity} %</p>
             </div>
